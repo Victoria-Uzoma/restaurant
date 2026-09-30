@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Order | Queenz Restaurant</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        royalBlue: "#4883B5",
+                        brown: "#6B4226",
+                        gold: "#C9A227",
+                        cream: "#F7F1E8",
+                        darkBrown: "#321E12"
+                    },
+
+                    fontFamily: {
+                        serif: ["Georgia", "serif"],
+                        sans: ["Arial", "sans-serif"]
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+
+
+<body class="bg-cream text-brown">
+
+
+    <header class="bg-brown text-white">
+
+        <nav class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+
+            <a href="index.html">
+
+                <h1 class="font-serif text-2xl text-gold">
+                    QUEENZ
+                </h1>
+
+                <p class="text-xs tracking-[0.3em]">
+                    RESTAURANT
+                </p>
+
+            </a>
+
+
+            <div class="flex gap-6">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="menu.html">
+                    Menu
+                </a>
+
+                <a href="order.html" class="text-gold">
+                    Order
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <main class="max-w-3xl mx-auto px-6 py-20">
+
+        <div class="text-center mb-12">
+
+            <p class="uppercase tracking-[0.3em] text-royalBlue font-semibold">
+                Delivery
+            </p>
+
+            <h2 class="font-serif text-5xl text-brown mt-3">
+                Place Your Order
+            </h2>
+
+            <p class="text-gray-600 mt-4">
+                Choose your soup, swallow and protein.
+            </p>
+
+        </div>
+
+
+
+        <form
+            id="orderForm"
+            class="bg-white rounded-2xl shadow-lg p-8 space-y-6">
+
+
+            <!-- NAME -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-royalBlue">
+
+            </div>
+
+
+
+            <!-- PHONE -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Phone Number
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3 outline-none focus:border-royalBlue">
+
+            </div>
+
+
+
+            <!-- SOUP -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Choose Your Soup
+                </label>
+
+                <select
+                    id="soup"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3">
+
+                    <option value="">
+                        Select a soup
+                    </option>
+
+                    <option>Egusi Soup</option>
+                    <option>Afang Soup</option>
+                    <option>Oha Soup</option>
+                    <option>Okro Soup</option>
+                    <option>Bitterleaf Soup</option>
+                    <option>Ogbono Soup</option>
+                    <option>Banga Soup</option>
+                    <option>Fisherman Soup</option>
+                    <option>Edikang Ikong</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- SWALLOW -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Choose Your Swallow
+                </label>
+
+                <select
+                    id="swallow"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3">
+
+                    <option value="">
+                        Select a swallow
+                    </option>
+
+                    <option>Eba</option>
+                    <option>Pounded Yam</option>
+                    <option>Semovita</option>
+                    <option>Fufu</option>
+                    <option>Amala</option>
+                    <option>Wheat</option>
+                    <option>Oat</option>
+                    <option>Plantain Flour</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- PROTEIN -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Protein
+                </label>
+
+                <select
+                    id="protein"
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3">
+
+                    <option>Beef</option>
+                    <option>Goat Meat</option>
+                    <option>Chicken</option>
+                    <option>Fish</option>
+                    <option>Assorted Meat</option>
+                    <option>Stockfish</option>
+
+                </select>
+
+            </div>
+
+
+
+            <!-- QUANTITY -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    value="1"
+                    min="1"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3">
+
+            </div>
+
+
+
+            <!-- ADDRESS -->
+
+            <div>
+
+                <label class="block font-semibold mb-2">
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="address"
+                    rows="4"
+                    required
+                    class="w-full border border-gray-300 rounded-lg px-4 py-3"
+                    placeholder="Enter your delivery address">
+                </textarea>
+
+            </div>
+
+
+
+            <button
+                type="submit"
+                class="w-full bg-brown text-white py-4 rounded-full font-semibold hover:bg-royalBlue transition">
+
+                Place Order
+
+            </button>
+
+
+            <div
+                id="orderMessage"
+                class="hidden bg-green-100 text-green-800 p-4 rounded-lg text-center">
+            </div>
+
+        </form>
+
+    </main>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
