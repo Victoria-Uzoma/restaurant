@@ -1,13 +1,56 @@
 // ================= MOBILE MENU =================
 
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
+const menuBtn = document.getElementById("menu-button");
+const closeMenu = document.getElementById("close-menu");
+const mobileMenu = document.getElementById("mobile-menu");
 
 if (menuBtn && mobileMenu) {
 
+    // Open mobile menu
     menuBtn.addEventListener("click", function () {
 
-        mobileMenu.classList.toggle("hidden");
+        mobileMenu.classList.remove("translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+
+        menuBtn.setAttribute("aria-expanded", "true");
+
+    });
+
+}
+
+
+// Close mobile menu
+if (closeMenu && mobileMenu) {
+
+    closeMenu.addEventListener("click", function () {
+
+        mobileMenu.classList.remove("translate-x-0");
+        mobileMenu.classList.add("translate-x-full");
+
+        menuBtn.setAttribute("aria-expanded", "false");
+
+    });
+
+}
+
+
+// Close menu when a navigation link is clicked
+if (mobileMenu) {
+
+    const mobileLinks = mobileMenu.querySelectorAll("a");
+
+    mobileLinks.forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            mobileMenu.classList.remove("translate-x-0");
+            mobileMenu.classList.add("translate-x-full");
+
+            if (menuBtn) {
+                menuBtn.setAttribute("aria-expanded", "false");
+            }
+
+        });
 
     });
 
